@@ -17,6 +17,8 @@
   // SOFLE RGB
 #include <stdio.h>
 
+#include "keymap_spanish.h"
+
 #include QMK_KEYBOARD_H
 
 #define INDICATOR_BRIGHTNESS 30
@@ -87,29 +89,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * QWERTY
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  `   |
+ * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Bspc |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | TAB  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  | Bspc |
+ * | TAB  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  .   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |LShift|   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
+ * |LShift|   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  ,   |
  * |------+------+------+------+------+------| MUTE  |    |DISCORD|------+------+------+------+------+------|
- * | LCTR |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |LShift|
+ * | LCTR |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ;  |   {  |   }  |  -   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | Bspc | WIN  |LOWER | Enter| /Space  /       \Enter \  |SPACE |RAISE | RCTR | RAlt |
+ *            | LAlt | CLock|LOWER | Lcmd | /Enter  /       \Space \  |RShift|RAISE | End  | RAlt |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
+ *LShift
  */
+ 
   [_QWERTY] = LAYOUT(
-  //,------------------------------------------------.                    ,---------------------------------------------------.
-  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,             LT(_SWITCH,KC_6), KC_7,   KC_8,    KC_9,    KC_0,    KC_GRV,
+  //,------------------------------------------------.                   ,-----------------------------------------------------.
+  KC_ESC,   ES_1,   ES_2,    ES_3,    ES_4,    ES_5,                       ES_6,    ES_7,   ES_8,    ES_9,    ES_0,    KC_BSPC,
   //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
-  LT(_NUMPAD,KC_TAB),KC_Q,KC_W,KC_E,  KC_R,    KC_T,                      KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,
+  KC_TAB,   ES_Q,    ES_W,   ES_E,    ES_R,    ES_T,                       ES_Y,    ES_U,   ES_I,    ES_O,    ES_P,    ES_COMM,
   //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
-  KC_LSFT,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+  KC_LSFT,  ES_A,   ES_S,    ES_D,    ES_F,    ES_G,                       ES_H,    ES_J,   ES_K,    ES_L,    ES_NTIL, ES_DOT,
   //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
-  KC_LCTRL, KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,  KC_MUTE,  KC_D_MUTE,KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_LSFT,
+  KC_LCTRL, ES_Z,   ES_X,    ES_C,    ES_V,    ES_B,  KC_MUTE,  KC_D_MUTE, ES_N,    ES_M,   ES_SCLN, ES_LCBR,  ES_RCBR, ES_MINS,
   //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
-                 KC_BSPC, KC_LGUI, KC_LOWER, KC_SPC,  KC_ENT   ,     KC_SPC, KC_ENT ,  KC_RAISE, KC_RCTRL, KC_RALT
+                 KC_LALT, KC_CAPS, KC_LOWER, KC_LCMD,  KC_ENT   ,  KC_SPC, KC_RSFT,  KC_RAISE, KC_END,  KC_RALT
   //            \--------+--------+--------+---------+-------|   |--------+---------+--------+---------+-------/
 ),
 
