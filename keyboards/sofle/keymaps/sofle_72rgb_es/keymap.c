@@ -335,27 +335,7 @@ const rgblight_segment_t PROGMEM layer_adjust_lights[] = RGBLIGHT_LAYER_SEGMENTS
   SET_LAYER_ID(HSV_RED)
 );
 
-/*
-const rgblight_segment_t PROGMEM layer_colemakdh_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-  SET_LAYER_ID(HSV_PINK)
-);
-//_NUMPAD
-const rgblight_segment_t PROGMEM layer_numpad_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-	SET_INDICATORS(HSV_ORANGE),
-    SET_UNDERGLOW(HSV_ORANGE),
-	SET_NUMPAD(HSV_BLUE),
-    {7, 4, HSV_ORANGE},
-    {25, 2, HSV_ORANGE},
-    {35+6, 4, HSV_ORANGE},
-    {35+25, 2, HSV_ORANGE}
-    );
-// _SWITCHER   // light up top row
-const rgblight_segment_t PROGMEM layer_switcher_lights[] = RGBLIGHT_LAYER_SEGMENTS(
-	SET_LAYER_ID(HSV_GREEN),
-	SET_NUMROW(HSV_GREEN)
-);
 
-*/
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
 
     layer_qwerty_lights,
